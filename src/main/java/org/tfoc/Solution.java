@@ -47,9 +47,10 @@ public class Solution {
 
                             int aboveSquare = nums[j - 1][k];
                             int aboveLine = j - 1;
-                            newRottenOranges.put(aboveLine + "-" + k, true);
+
                             if(aboveSquare == FRESH_ORANGE){
                                 nums[j - 1][k] = 2;
+                                newRottenOranges.put(aboveLine + "-" + k, true);
                                 freshOranges--;
                             }
                         }
@@ -58,9 +59,10 @@ public class Solution {
 
                             int belowSquare = nums[j + 1][k];
                             int belowLine = j + 1;
-                            newRottenOranges.put(belowLine + "-" + k, true);
+
                             if(belowSquare == FRESH_ORANGE){
                                 nums[j + 1][k] = 2;
+                                newRottenOranges.put(belowLine + "-" + k, true);
                                 freshOranges--;
                             }
                         }
@@ -69,9 +71,10 @@ public class Solution {
 
                             int leftSquare = nums[j][k - 1];
                             int leftColumn = k - 1;
-                            newRottenOranges.put(j + "-" + leftColumn, true);
+
                             if(leftSquare == FRESH_ORANGE){
                                 nums[j][k - 1] = 2;
+                                newRottenOranges.put(j + "-" + leftColumn, true);
                                 freshOranges--;
                             }
                         }
@@ -80,9 +83,10 @@ public class Solution {
 
                             int rightSquare = nums[j][k + 1];
                             int rightColumn = k + 1;
-                            newRottenOranges.put(j + "-" + rightColumn, true);
+
                             if(rightSquare == FRESH_ORANGE){
                                 nums[j][k + 1] = 2;
+                                newRottenOranges.put(j + "-" + rightColumn, true);
                                 freshOranges--;
                             }
                         }
